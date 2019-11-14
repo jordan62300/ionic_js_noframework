@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css" />
+    <title>Budget Planner</title>
+</head>
+
+<body>
+    <ion-app>
+        <ion-header>
+            <ion-toolbar color="primary">
+                <ion-title>Meet Too</ion-title>
+            </ion-toolbar>
+        </ion-header>
+        <ion-content>
+            <ion-grid>
+                <ion-row>
+                    <ion-col size-md="6" offset-md="3">
+                        <ion-card>
+                            <ion-card-header>
+                                <ion-card-title color="primary">
+                                    Nouvelle soirée
+                                </ion-card-title>
+                            </ion-card-header>
+                            <ion-card-content>
+                                <ion-item>
+                                    <ion-label position="floating">Nom de la soirée</ion-label>
+                                    <ion-input id="name" type="text"></ion-input>
+                                </ion-item>
+                                <ion-item>
+                                    <ion-label position="floating"></ion-label>
+                                    <ion-select id="theme" value="Pas de theme" okText="Okay" cancelText="Dismiss">
+                                        <ion-select-option value="Game of thrones">Game of thrones</ion-select-option>
+                                        <ion-select-option value="Harry Potter">Harry Potter</ion-select-option>
+                                        <ion-select-option value="Nazi">Nazi</ion-select-option>
+                                        <ion-select-option value="Pas de theme">Pas de theme</ion-select-option>
+                                    </ion-select>
+                                </ion-item>
+                                <ion-item>
+                                    <ion-label position="floating">Date</ion-label>
+                                    <ion-datetime id="date"></ion-datetime>
+                                </ion-item>
+                                <div margin-vertical text-right>
+                                    <ion-button  id="cancel" shape="round" fill="outline" color="danger" onclick="clearInput()">
+                                        <ion-icon name="close" slot="start"></ion-icon>Reinitialiser
+                                    </ion-button>
+                                    <ion-button id="add" onclick="addSoiree()">
+                                        <ion-icon name="add" slot="start"></ion-icon>Ajouter la soirée
+                                    </ion-button>
+                                </div>
+                            </ion-card-content>
+                        </ion-card>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col size-md="6" offset-md="3">
+                        <ion-list id="soiree-list"></ion-list>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col>
+                        <p></p>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-content>
+    </ion-app>
+    <script src="app.js"></script>
+</body>
+
+</html>
